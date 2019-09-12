@@ -3,7 +3,6 @@ chat-space DB設計
 ## usersテーブル
 |Column|Type|Option|
 |------|----|------|
-|id|integer|null: false|
 |name|string|null: false|
 |Email|string|null: false, unique: true|
 |password|string|null: false|
@@ -15,7 +14,6 @@ chat-space DB設計
 ## groupsテーブル
 |Column|Type|Option|
 |------|----|------|
-|id|integer|null: false|
 |name|string|null: false|
 ### Association
 - has_many :messages
@@ -25,9 +23,8 @@ chat-space DB設計
 ## users_groupsテーブル
 |Column|Type|Option|
 |------|----|------|
-|id|integer|null: false|
-|user_id|integer|null: false|
-|group_id|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
@@ -35,11 +32,10 @@ chat-space DB設計
 ## messageテーブル
 |Column|Type|Option|
 |------|----|------|
-|id|integer|null: false|
 |text|text|null: false|
 |image|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
