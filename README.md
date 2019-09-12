@@ -3,7 +3,7 @@ chat-space DB設計
 ## usersテーブル
 |Column|Type|Option|
 |------|----|------|
-|name|string|null: false|
+|name|string|null: false, index: true|
 |Email|string|null: false, unique: true|
 |password|string|null: false|
 ### Association
@@ -32,8 +32,8 @@ chat-space DB設計
 ## messageテーブル
 |Column|Type|Option|
 |------|----|------|
-|text|text|null: false|
-|image|string|null: false|
+|text|text||
+|image|string||
 |user_id|references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
 ### Association
