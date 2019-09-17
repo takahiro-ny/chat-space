@@ -1,0 +1,46 @@
+.top
+  グループに参加しました。
+.contents
+  .left-contents
+    .header
+      .name-box
+        takahiro
+      .menu
+        .menu__new
+          = fa_icon 'edit' 
+        .menu__edit
+          = fa_icon 'cog'      
+    .bottom
+      .group
+        tech_expart
+      .message
+        勉強しよう
+
+  .right-contents
+    .header
+      .header__group
+        .header__group__current-group
+          tech_expart
+        .header__group__member
+          member takahiro
+      .header__edit-btn
+        %input.button{:type => "submit", :value => "Edit"}
+
+    .main
+      .message
+        .message__info
+          .message__info__talker
+            takahiro
+          .message__info__date
+            2019/6/18
+        .message__text
+          こんにちは
+
+    .form
+      .input-box
+        %input.text{:placeholder => "type a message", :type => "text"}
+        %label.image
+          = fa_icon 'picture-o',class: 'icon'
+          %input.hidden{type: 'file'}
+      .send-btn
+        %input.button{:type => "submit", :value => "Send"}
