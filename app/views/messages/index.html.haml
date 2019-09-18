@@ -24,7 +24,7 @@
         .header__group__member
           member takahiro
       .header__edit-btn
-        %input.button{:type => "submit", :value => "Edit"}
+        %input.button{type: "submit", value: "Edit"}
 
     .main
       .message
@@ -38,9 +38,9 @@
 
     .form
       .input-box
-        %input.text{:placeholder => "type a message", :type => "text"}
+        %input.text{placeholder: "type a message", type: "text"}
         %label.image
           = fa_icon 'picture-o',class: 'icon'
           %input.hidden{type: 'file'}
       .send-btn
-        %input.button{:type => "submit", :value => "Send"}
+        %input.button{type: "submit", value: "Send"}
