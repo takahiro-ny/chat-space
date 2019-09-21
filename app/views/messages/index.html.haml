@@ -1,21 +1,5 @@
-.top
-  グループに参加しました。
 .contents
-  .left-contents
-    .header
-      .name-box
-        takahiro
-      .menu
-        .menu__new
-          = fa_icon 'edit' 
-        .menu__edit
-          = fa_icon 'cog'      
-    .bottom
-      .group
-        tech_expart
-      .message
-        勉強しよう
-
+  = render 'messages/side_bar'
   .right-contents
     .header
       .header__group
@@ -43,4 +27,4 @@
           %input.hidden{type: 'file'}
       .send-btn
         %input.button{type: "submit", value: "Send"}
-
+    
