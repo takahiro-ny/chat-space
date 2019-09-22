@@ -9,22 +9,15 @@
           member takahiro
       .header__edit-btn
         %input.button{type: "submit", value: "Edit"}
+        
     .main
-      .message
-        .message__info
-          .message__info__talker
-            takahiro
-          .message__info__date
-            2019/6/18
-        .message__text
-          こんにちは
-
-    .form
-      .input-box
-        %input.text{placeholder: "type a message", type: "text"}
-        %label.image
-          = fa_icon 'picture-o',class: 'icon'
-          %input.hidden{type: 'file'}
-      .send-btn
-        %input.button{type: "submit", value: "Send"}
+      =render partial: 'message', collection: @messages
     
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
