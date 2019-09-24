@@ -93,36 +93,37 @@ color: $white;
       }
     }
   
-
-    .main{
-      height: calc(100vh - 190px);
-      background: $right-main;
+    .messages {
+      background-color: #FAFAFA;
+      box-sizing: border-box;
+      padding: 46px 40px 0;
+      height: calc(100% - 100px - 90px);
       overflow: scroll;
-      padding: 0 40px;
-      border:thin solid #eeeeee;
-      .message{
-        padding-top:46px;
-        &__info{
+      .message {
+        .upper-message {
           display: flex;
-          margin-bottom: 10px;
-          &__talker{
+          &__user-name {
+            color: #434a54;
             font-size: 16px;
             font-weight: bold;
-            color: #434a54;
           }
-          &__date{
+          &__date {
+            color: #999;
             font-size: 12px;
-            margin-left: 10px;
-            color: #999999;
+            padding-left: 10px;
           }
         }
-        &__text{
-          font-size: 14px;
-          margin-bottom: 10px;
-          color: #434a54;
+        .lower-message {
+          margin-top: 10px;
+          &__content {
+            color: #434a54;
+            font-size: 14px;
+            margin-bottom: 40px;
+          }
         }
       }
     }
+  
     
     .form {
       background-color: #DDDDDD;
