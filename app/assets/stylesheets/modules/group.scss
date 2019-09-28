@@ -88,17 +88,19 @@ li {
     clear: both;
     display: block;
   }
-  &__name {
-    float: left;
+  .chat-group-user__name {
+    display: inline;
   }
-  &__btn {
+
+  .chat-group-user__btn {
     float: right;
-    display: inline-block;
     cursor: pointer;
-    &--add {
+
+    &.chat-group-user__btn--add {
       color: #38aef0;
     }
-    &--remove {
+
+    &.chat-group-user__btn--remove {
       color: #f05050;
     }
   }
