@@ -4,12 +4,13 @@
     .header
       .header__group
         .header__group__current-group
-          tech_expart
+          = @group.name
         .header__group__member
-          member takahiro
+          - @group.users.each do |user|
+            =user.name
       .header__edit-btn
-        %input.button{type: "submit", value: "Edit"}
-        
+        = link_to "Edit",edit_group_path(@group), class:"button"
+
     .messages
       =render partial: 'message', collection: @messages
     
