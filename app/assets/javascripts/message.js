@@ -45,7 +45,6 @@ $('#new_message').on('submit', function(e) {
    return false;
   });
   
-  if (path.match('/messages')) {
     var reloadMessages = function() {
       last_message_id = $('.message:last').data('message-id'); 
       $.ajax({
@@ -64,10 +63,13 @@ $('#new_message').on('submit', function(e) {
       })
       .fail(function() {
         alert('error');
-      });
+      })
+    }
+
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      setInterval(reloadMessages, 5000);
     };
-    setInterval(reloadMessages, 5000);
-  }
-});
+  });
+
 
 
