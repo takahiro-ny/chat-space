@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function() {
 $(function(){ 
     function buildHTML(message){
       var image = message.image ? `<img src= ${ message.image }>` : "";
@@ -70,6 +71,4 @@ $('#new_message').on('submit', function(e) {
       setInterval(reloadMessages, 5000);
     };
   });
-
-
-
+})
